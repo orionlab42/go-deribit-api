@@ -27,6 +27,18 @@ func (c *Client) GetFundingChartData(params *models.GetFundingChartDataParams) (
 	return
 }
 
+// This is a new function added
+func (c *Client) GetFundingRateHistory(params *models.GetFundingRateHistoryParams) (result models.GetFundingRateHistoryResponse, err error) {
+	err = c.Call("public/get_funding_rate_history", params, &result)
+	return
+}
+
+// This is a new function added
+func (c *Client) GetFundingRateValue(params *models.GetFundingRateValueParams) (result models.GetFundingRateValueResponse, err error) {
+	err = c.Call("public/get_funding_rate_value", params, &result)
+	return
+}
+
 func (c *Client) GetHistoricalVolatility(params *models.GetHistoricalVolatilityParams) (result models.GetHistoricalVolatilityResponse, err error) {
 	err = c.Call("public/get_historical_volatility", params, &result)
 	return
