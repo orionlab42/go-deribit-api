@@ -99,6 +99,11 @@ func (c *Client) GetTradingviewChartData(params *models.GetTradingviewChartDataP
 	return
 }
 
+func (c *Client) GetVolatilityIndexData(params *models.GetVolatilityIndexDataParams) (result models.GetVolatilityIndexDataResponse, err error) {
+	err = c.Call("/public/get_volatility_index_data", params, &result)
+	return
+}
+
 func (c *Client) Ticker(params *models.TickerParams) (result models.TickerResponse, err error) {
 	err = c.Call("public/ticker", params, &result)
 	return
