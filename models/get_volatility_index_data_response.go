@@ -1,5 +1,5 @@
 package models
 
 type GetVolatilityIndexDataResponse struct {
-	Data []float64 `json:"data"`
+	Data [][]float64 `json:"data"`
 }
